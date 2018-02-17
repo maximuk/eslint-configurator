@@ -1,0 +1,22 @@
+{
+  "name": "eslint-configurator",
+  "version": "0.1.0",
+  "description": "",
+  "bin": {
+    "eslint-configurator": "./bin/index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Sergey Maksimuk",
+  "license": "MIT",
+  "dependencies": {
+    "colors": "1.1.2",
+    "eslint": "4.16.0",
+    "eslint-plugin-import": "2.8.0",
+    "eslint-plugin-jsx-a11y": "6.0.3",
+    "eslint-plugin-react": "7.6.1",
+    "inquirer": "5.0.1",
+    "temp-write": "3.4.0"
+  }
+}
