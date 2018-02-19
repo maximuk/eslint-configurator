@@ -1,5 +1,8 @@
 # ESLint configurator
 
+[![npm](https://img.shields.io/npm/v/eslint-configurator.svg)](https://www.npmjs.com/package/eslint-configurator)
+[![Build Status](https://img.shields.io/travis/maximuk/eslint-configurator/master.svg)](http://travis-ci.org/maximuk/eslint-configurator)
+
 ## Commands:
 * `./node_modules/.bin/eslint-configurator init`
 * `./node_modules/.bin/eslint-configurator check`
