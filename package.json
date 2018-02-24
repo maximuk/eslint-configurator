@@ -29,7 +29,7 @@
     "temp-write": "3.4.0"
   },
   "devDependencies": {
-    "babel-eslint": "^8.2.1",
-    "eslint-config-maximuk": "^0.0.3"
+    "babel-eslint": "8.2.2",
+    "eslint-config-maximuk": "0.0.4"
   }
 }
