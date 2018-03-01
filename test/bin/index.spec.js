@@ -1,7 +1,9 @@
 jest.mock('../../lib/undefined.js', () => {}, { virtual: true });
 
+const mockRequireLibInitJs = {};
+
 jest.mock('../../lib/init.js', () => {
-  global.requireLibInitJs();
+  mockRequireLibInitJs.init();
 }, { virtual: true });
 
 jest.mock('../../lib/check.js', () => {}, { virtual: true });
@@ -26,7 +28,7 @@ describe('./bin/index.js', () => {
     consoleLog = console.log;
     console.log = jest.fn();
 
-    global.requireLibInitJs = jest.fn();
+    mockRequireLibInitJs.init = jest.fn();
   });
 
   afterEach(() => {
@@ -64,11 +66,11 @@ describe('./bin/index.js', () => {
   it('should require proper module', () => {
     process.argv = ['init'];
 
-    expect(global.requireLibInitJs).toHaveBeenCalledTimes(0);
+    expect(mockRequireLibInitJs.init).toHaveBeenCalledTimes(0);
 
     require('../../bin/index.js');
 
     expect(process.exit).toHaveBeenCalledTimes(0);
-    expect(global.requireLibInitJs).toHaveBeenCalledTimes(1);
+    expect(mockRequireLibInitJs.init).toHaveBeenCalledTimes(1);
   });
 });
