@@ -7,7 +7,8 @@
   },
   "scripts": {
     "lint": "eslint bin lib",
-    "test": "jest -c ./test/jest.config.js"
+    "test": "jest -c ./test/jest.config.js",
+    "prepush": "npm run lint && npm test"
   },
   "repository": {
     "type": "git",
@@ -31,6 +32,7 @@
   "devDependencies": {
     "babel-eslint": "8.2.2",
     "eslint-config-maximuk": "0.0.4",
+    "husky": "0.14.3",
     "jest": "22.4.2"
   }
 }
