@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/maximuk/eslint-configurator#readme",
   "dependencies": {
-    "colors": "1.2.0",
+    "colors": "1.2.1",
     "eslint": "4.18.2",
     "eslint-plugin-import": "2.9.0",
     "eslint-plugin-jsx-a11y": "6.0.3",
