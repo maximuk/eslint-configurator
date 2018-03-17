@@ -1,13 +1,10 @@
-jest.mock('../../lib/undefined.js', () => {}, { virtual: true });
+jest.mock('colors/safe', () => ({
+  red: str => str,
+}));
 
-const mockRequireLibInitJs = {};
+const mockInit = jest.fn();
 
-jest.mock('../../lib/init.js', () => {
-  mockRequireLibInitJs.init();
-}, { virtual: true });
-
-jest.mock('../../lib/check.js', () => {}, { virtual: true });
-jest.mock('../../lib/update.js', () => {}, { virtual: true });
+jest.mock('../../lib/init.js', () => mockInit);
 
 describe('./bin/index.js', () => {
   let processOn;
@@ -28,7 +25,7 @@ describe('./bin/index.js', () => {
     consoleLog = console.log;
     console.log = jest.fn();
 
-    mockRequireLibInitJs.init = jest.fn();
+    mockInit.mockReset();
   });
 
   afterEach(() => {
@@ -41,6 +38,9 @@ describe('./bin/index.js', () => {
   });
 
   it('should listen unhandledRejection event', () => {
+    const reason = 'reason';
+    const promise = 'promise';
+
     require('../../bin/index.js');
 
     expect(process.on).toHaveBeenCalledTimes(1);
@@ -50,10 +50,19 @@ describe('./bin/index.js', () => {
     expect(process.exit).toBeCalledWith(1);
     expect(console.log).toHaveBeenCalledTimes(1);
 
-    process.on.mock.calls[0][1]();
+    process.exit.mockReset();
+    console.log.mockReset();
+    process.on.mock.calls[0][1](reason, promise);
 
-    expect(process.exit).toHaveBeenCalledTimes(2);
-    expect(console.log).toHaveBeenCalledTimes(2);
+    expect(process.exit).toHaveBeenCalledTimes(1);
+    expect(process.exit).toBeCalledWith(1);
+    expect(console.log).toHaveBeenCalledTimes(1);
+    expect(console.log).toBeCalledWith(
+      'Unhandled Rejection at: Promise',
+      promise,
+      'reason:',
+      reason
+    );
   });
 
   it('should exit with code 1 if command not provided', () => {
@@ -61,16 +70,19 @@ describe('./bin/index.js', () => {
 
     expect(process.exit).toHaveBeenCalledTimes(1);
     expect(process.exit).toBeCalledWith(1);
+    expect(console.log).toHaveBeenCalledTimes(1);
+    expect(console.log).toBeCalledWith('No command to run\n');
   });
 
   it('should require proper module', () => {
     process.argv = ['init'];
 
-    expect(mockRequireLibInitJs.init).toHaveBeenCalledTimes(0);
+    expect(mockInit).toHaveBeenCalledTimes(0);
 
     require('../../bin/index.js');
 
     expect(process.exit).toHaveBeenCalledTimes(0);
-    expect(mockRequireLibInitJs.init).toHaveBeenCalledTimes(1);
+    expect(console.log).toHaveBeenCalledTimes(0);
+    expect(mockInit).toHaveBeenCalledTimes(1);
   });
 });

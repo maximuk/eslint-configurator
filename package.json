@@ -8,6 +8,7 @@
   "scripts": {
     "lint": "eslint bin lib",
     "test": "jest -c ./test/jest.config.js",
+    "test:watch": "jest -c ./test/jest.config.js --watch",
     "prepush": "npm run lint && npm test"
   },
   "repository": {

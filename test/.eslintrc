@@ -2,6 +2,7 @@
   "rules": {
     "no-empty-function": 0,
     "max-statements": 0,
-    "no-console": 0
+    "no-console": 0,
+    "no-magic-numbers": 0
   }
 }

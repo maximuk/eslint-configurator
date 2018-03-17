@@ -1,68 +1,57 @@
-const mockBaseConfig = { extends: ['BASE_CONFIG_NAME_extends'] };
-const mockPluginConfig = { extends: ['plugin_extends'] };
+const { BASE_CONFIG_NAME, PLUGINS_LIST } = require('../../lib/const.js');
 
-jest.mock('../../BASE_CONFIG_NAME.js', () => mockBaseConfig, { virtual: true });
-jest.mock('../../plugin.js', () => mockPluginConfig, { virtual: true });
-jest.mock('../../lib/utils.js', () => ({}), { virtual: true });
+const baseUserConfig = { extends: ['extend1', 'extend2'] };
+const mockConfig = class {
+  constructor(name) {
+    this.fakeConstructor(name);
+
+    if (name === BASE_CONFIG_NAME)
+      this.userConfig = baseUserConfig;
+  }
+};
+
 jest.mock('fs');
+jest.mock('path', () => ({
+  resolve: path => `/${path}/`,
+}));
+jest.mock('../../lib/utils.js', () => ({}), { virtual: true });
+jest.mock('../../lib/config.js', () => mockConfig, { virtual: true });
 
 describe('./lib/update.js', () => {
-  const BASE_CONFIG_NAME = 'BASE_CONFIG_NAME';
-  const plugin = 'plugin';
-  const usedPlugins = [plugin];
-  const categorizedEsLintRules = 'categorizedEsLintRules';
-  const categorizedPluginRules = 'categorizedPluginRules';
+  let update;
 
-  const utils = require('../../lib/utils.js');
   const fs = require('fs');
+  const utils = require('../../lib/utils.js');
 
   beforeEach(() => {
-    utils.BASE_CONFIG_NAME = BASE_CONFIG_NAME;
-    utils.formatFiles = jest.fn();
-    utils.getCategorizedESLintRules =
-      jest.fn().mockReturnValue(categorizedEsLintRules);
-    utils.getPlugins = jest.fn().mockReturnValue({
-      [plugin]: { categorizedRules: categorizedPluginRules },
-    });
-    utils.getUsedPlugins = jest.fn().mockReturnValue(usedPlugins);
-    utils.loadPluginRules = jest.fn(a => a);
-    utils.saveConfig = jest.fn();
-
     fs.unlinkSync = jest.fn();
+
+    utils.formatFiles = jest.fn();
+
+    mockConfig.prototype.fakeConstructor = jest.fn();
+    mockConfig.prototype.save = jest.fn();
+
+    update = require('../../lib/update.js');
   });
 
-  afterEach(() => {});
+  it('should update all configs and format files', () => {
+    update();
 
-  it('should perform proper steps', () => {
-    require('../../lib/update.js');
-
-    expect(utils.getPlugins).toHaveBeenCalledTimes(1);
-    expect(utils.loadPluginRules).toHaveBeenCalledTimes(2);
-    expect(utils.loadPluginRules.mock.calls).toEqual([
-      [plugin],
+    expect(mockConfig.prototype.fakeConstructor).toHaveBeenCalledTimes(4);
+    expect(mockConfig.prototype.fakeConstructor.mock.calls).toEqual([
       [BASE_CONFIG_NAME],
+      ...PLUGINS_LIST.map(plugin => [plugin]),
     ]);
+
     expect(fs.unlinkSync).toHaveBeenCalledTimes(2);
-    expect(fs.unlinkSync.mock.calls[0][0])
-      .toMatch(new RegExp('/plugin_extends$'));
-    expect(fs.unlinkSync.mock.calls[1][0])
-      .toMatch(new RegExp('/BASE_CONFIG_NAME_extends$'));
-    expect(utils.saveConfig).toHaveBeenCalledTimes(2);
-    expect(utils.saveConfig.mock.calls).toEqual([
-      [
-        mockPluginConfig,
-        plugin,
-        categorizedPluginRules,
-        plugin,
-      ],
-      [
-        mockBaseConfig,
-        BASE_CONFIG_NAME,
-        categorizedEsLintRules,
-        BASE_CONFIG_NAME,
-      ],
+    expect(fs.unlinkSync.mock.calls).toEqual([
+      ['/extend1/'],
+      ['/extend2/'],
     ]);
-    expect(utils.getCategorizedESLintRules).toHaveBeenCalledTimes(1);
+
+    expect(mockConfig.prototype.save).toHaveBeenCalledTimes(1);
+    expect(mockConfig.prototype.save).toBeCalledWith(undefined, baseUserConfig);
+
     expect(utils.formatFiles).toHaveBeenCalledTimes(1);
   });
 });

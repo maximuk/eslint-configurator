@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 
-process.on('unhandledRejection', (reason, p) => {
-  console.log('Unhandled Rejection at: Promise', p, 'reason:', reason);
+process.on('unhandledRejection', (reason, promise) => {
+  console.log('Unhandled Rejection at: Promise', promise, 'reason:', reason);
   process.exit(1);
 });
 
-require('colors');
+const colors = require('colors/safe');
 
 const command = [
   'init',
@@ -13,9 +13,9 @@ const command = [
   'update',
 ].find(c => process.argv.includes(c));
 
-if (!command) {
-  console.log('No command to run\n'.red);
+if (command) {
+  require(`../lib/${command}.js`)();
+} else {
+  console.log(colors.red('No command to run\n'));
   process.exit(1);
 }
-
-require(`../lib/${command}.js`);
