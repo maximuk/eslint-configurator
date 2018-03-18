@@ -1,0 +1,315 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`./lib/init.js should create configs and format files 1`] = `
+Array [
+  Array [
+    Array [
+      Object {
+        "choices": Array [
+          "3",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+        ],
+        "default": "7",
+        "message": "Specify the version of ECMAScript syntax you want to use:",
+        "name": "ecmaVersion",
+        "type": "list",
+      },
+      Object {
+        "default": true,
+        "message": "Are you using ES6 modules?",
+        "name": "sourceType",
+        "type": "confirm",
+      },
+      Object {
+        "choices": Array [
+          "globalReturn",
+          "impliedStrict",
+          "jsx",
+          "experimentalObjectRestSpread",
+        ],
+        "default": Array [
+          "jsx",
+          "experimentalObjectRestSpread",
+        ],
+        "message": "Which additional language features you’d like to use?",
+        "name": "ecmaFeatures",
+        "type": "checkbox",
+      },
+      Object {
+        "choices": Array [
+          "espree",
+          "esprima",
+          "babel-eslint",
+        ],
+        "default": "babel-eslint",
+        "message": "Which parser are you going to use?",
+        "name": "parser",
+        "type": "list",
+      },
+      Object {
+        "choices": Array [
+          "builtin",
+          "browser",
+          "node",
+          "commonjs",
+          "shared-node-browser",
+          "worker",
+          "amd",
+          "mocha",
+          "jasmine",
+          "jest",
+          "phantomjs",
+          "jquery",
+          "qunit",
+          "prototypejs",
+          "shelljs",
+          "meteor",
+          "mongo",
+          "protractor",
+          "applescript",
+          "nashorn",
+          "serviceworker",
+          "atomtest",
+          "embertest",
+          "webextensions",
+          "es6",
+          "greasemonkey",
+        ],
+        "default": Array [],
+        "message": "Which env(s) are you going to use?",
+        "name": "env",
+        "pageSize": 10,
+        "type": "checkbox",
+      },
+      Object {
+        "choices": Array [
+          "import",
+          "react",
+          "jsx-a11y",
+        ],
+        "default": Array [],
+        "message": "Which plugins are you going to use?",
+        "name": "plugins",
+        "type": "checkbox",
+      },
+    ],
+  ],
+  Array [
+    Array [
+      Object {
+        "choices": Array [
+          "No",
+          "base",
+        ],
+        "default": "No",
+        "message": "Do you want to use any base config?",
+        "name": "base",
+        "type": "list",
+      },
+      Object {
+        "choices": Array [
+          "No",
+          "import",
+        ],
+        "default": "No",
+        "message": "Do you want to use any import config?",
+        "name": "import",
+        "type": "list",
+      },
+      Object {
+        "choices": Array [
+          "No",
+          "react",
+        ],
+        "default": "No",
+        "message": "Do you want to use any react config?",
+        "name": "react",
+        "type": "list",
+      },
+      Object {
+        "choices": Array [
+          "No",
+          "jsx-a11y",
+        ],
+        "default": "No",
+        "message": "Do you want to use any jsx-a11y config?",
+        "name": "jsx-a11y",
+        "type": "list",
+      },
+    ],
+  ],
+]
+`;
+
+exports[`./lib/init.js should create configs and format files 2`] = `
+Array [
+  Array [
+    "base",
+    Object {
+      "env": Object {
+        "env": true,
+      },
+      "parser": "parser",
+      "parserOptions": Object {
+        "ecmaFeatures": Object {
+          "ecmaFeatures": true,
+        },
+        "ecmaVersion": 7,
+        "sourceType": "module",
+      },
+    },
+  ],
+  Array [
+    "import",
+    Object {},
+  ],
+  Array [
+    "react",
+    Object {},
+  ],
+  Array [
+    "jsx-a11y",
+    Object {},
+  ],
+]
+`;
+
+exports[`./lib/init.js should save with sourceType = script 1`] = `
+Array [
+  Array [
+    Array [
+      Object {
+        "choices": Array [
+          "3",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+        ],
+        "default": "7",
+        "message": "Specify the version of ECMAScript syntax you want to use:",
+        "name": "ecmaVersion",
+        "type": "list",
+      },
+      Object {
+        "default": true,
+        "message": "Are you using ES6 modules?",
+        "name": "sourceType",
+        "type": "confirm",
+      },
+      Object {
+        "choices": Array [
+          "globalReturn",
+          "impliedStrict",
+          "jsx",
+          "experimentalObjectRestSpread",
+        ],
+        "default": Array [
+          "jsx",
+          "experimentalObjectRestSpread",
+        ],
+        "message": "Which additional language features you’d like to use?",
+        "name": "ecmaFeatures",
+        "type": "checkbox",
+      },
+      Object {
+        "choices": Array [
+          "espree",
+          "esprima",
+          "babel-eslint",
+        ],
+        "default": "babel-eslint",
+        "message": "Which parser are you going to use?",
+        "name": "parser",
+        "type": "list",
+      },
+      Object {
+        "choices": Array [
+          "builtin",
+          "browser",
+          "node",
+          "commonjs",
+          "shared-node-browser",
+          "worker",
+          "amd",
+          "mocha",
+          "jasmine",
+          "jest",
+          "phantomjs",
+          "jquery",
+          "qunit",
+          "prototypejs",
+          "shelljs",
+          "meteor",
+          "mongo",
+          "protractor",
+          "applescript",
+          "nashorn",
+          "serviceworker",
+          "atomtest",
+          "embertest",
+          "webextensions",
+          "es6",
+          "greasemonkey",
+        ],
+        "default": Array [],
+        "message": "Which env(s) are you going to use?",
+        "name": "env",
+        "pageSize": 10,
+        "type": "checkbox",
+      },
+      Object {
+        "choices": Array [
+          "import",
+          "react",
+          "jsx-a11y",
+        ],
+        "default": Array [],
+        "message": "Which plugins are you going to use?",
+        "name": "plugins",
+        "type": "checkbox",
+      },
+    ],
+  ],
+  Array [
+    Array [
+      Object {
+        "choices": Array [
+          "No",
+          "base",
+        ],
+        "default": "No",
+        "message": "Do you want to use any base config?",
+        "name": "base",
+        "type": "list",
+      },
+    ],
+  ],
+]
+`;
+
+exports[`./lib/init.js should save with sourceType = script 2`] = `
+Array [
+  Array [
+    "base",
+    Object {
+      "env": Object {
+        "env": true,
+      },
+      "parser": "parser",
+      "parserOptions": Object {
+        "ecmaFeatures": Object {
+          "ecmaFeatures": true,
+        },
+        "ecmaVersion": 7,
+        "sourceType": "script",
+      },
+    },
+  ],
+]
+`;
