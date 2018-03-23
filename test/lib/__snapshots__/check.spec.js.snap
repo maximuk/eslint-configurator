@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`./lib/check.js should check all available configs 1`] = `
+Array [
+  Array [
+    "createCLIEngine error",
+  ],
+  Array [
+    "
+eslint rules:",
+  ],
+  Array [
+    "  deprecated rules:",
+  ],
+  Array [
+    "    %s",
+    "deprecatedRule1",
+  ],
+  Array [
+    "    %s (use %s instead)",
+    "deprecatedRule2",
+    "replacedByRule",
+  ],
+  Array [
+    "    %s (use %s instead)",
+    "deprecatedRule3",
+    "replacedByRule",
+  ],
+  Array [
+    "  missing rules:",
+  ],
+  Array [
+    "    %s",
+    "missingRule",
+  ],
+  Array [
+    "  redundant rules:",
+  ],
+  Array [
+    "    %s",
+    "redundantRule",
+  ],
+  Array [
+    "
+eslint-plugin-import:",
+  ],
+  Array [
+    "  deprecated rules:",
+  ],
+  Array [
+    "    %s",
+    "deprecatedRule1",
+  ],
+  Array [
+    "    %s (use %s instead)",
+    "deprecatedRule2",
+    "replacedByRule",
+  ],
+  Array [
+    "    %s (use %s instead)",
+    "deprecatedRule3",
+    "replacedByRule",
+  ],
+  Array [
+    "  missing rules:",
+  ],
+  Array [
+    "    %s",
+    "missingRule",
+  ],
+  Array [
+    "  redundant rules:",
+  ],
+  Array [
+    "    %s",
+    "redundantRule",
+  ],
+]
+`;
