@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`./lib/config.js :: mapRules should return modified rules 1`] = `
+Object {
+  "prefix/testRule1": Object {
+    "category": "category",
+    "deprecated": true,
+    "description": undefined,
+    "link": "🔧 https://eslint.org/docs/rules/testRule1",
+    "name": "prefix/testRule1",
+    "replacedBy": "replacedBy",
+  },
+  "prefix/testRule2": Object {
+    "category": "other",
+    "deprecated": undefined,
+    "description": undefined,
+    "link": "🔧 https://eslint.org/docs/rules/testRule2",
+    "name": "prefix/testRule2",
+    "replacedBy": undefined,
+  },
+  "prefix/testRule3": Object {
+    "category": "other",
+    "deprecated": undefined,
+    "description": undefined,
+    "link": "https://eslint.org/docs/rules/testRule3",
+    "name": "prefix/testRule3",
+    "replacedBy": undefined,
+  },
+}
+`;

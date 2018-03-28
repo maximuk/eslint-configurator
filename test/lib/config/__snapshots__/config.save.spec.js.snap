@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`./lib/config.js :: save should save correct config 1`] = `
+Array [
+  Array [
+    "./pluginName.js",
+    "module.exports = {
+  \\"userConfig\\": \\"userConfig\\"
+};",
+  ],
+]
+`;
+
+exports[`./lib/config.js :: save should use pre-defined config 1`] = `
+Array [
+  Array [
+    "./pluginName.js",
+    "module.exports = {
+  \\"defined\\": \\"defined\\"
+};",
+  ],
+]
+`;

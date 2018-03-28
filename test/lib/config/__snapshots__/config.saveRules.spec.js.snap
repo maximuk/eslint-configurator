@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`./lib/config.js :: saveRules should save correct data 1`] = `
+Array [
+  Array [
+    "./rules/pluginName/category.js",
+    "module.exports = {
+  \\"rules\\": {
+
+    // rule1.description
+    // rule1.link
+    \\"rule1\\": \\"rule1\\",
+
+    // rule2.link
+    \\"rule2\\": \\"rule2\\"
+  }
+};
+",
+  ],
+]
+`;
