@@ -2,8 +2,8 @@ const path = require('path');
 
 const { BASE_CONFIG_NAME, RULE_VALUES_MAP } = require('../../lib/const.js');
 
-jest.mock('temp-write', () => ({}), { virtual: true });
-jest.mock('eslint', () => ({}), { virtual: true });
+jest.mock('temp-write');
+jest.mock('eslint');
 
 const mockConfig = {
   extends: ['./rules/base/category.js'],
