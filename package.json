@@ -34,7 +34,7 @@
   "devDependencies": {
     "babel-eslint": "8.2.3",
     "codecov": "3.0.2",
-    "eslint-config-maximuk": "0.0.6",
+    "eslint-config-maximuk": "0.0.7",
     "husky": "0.14.3",
     "jest": "22.4.3"
   }
