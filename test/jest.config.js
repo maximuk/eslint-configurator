@@ -15,5 +15,6 @@ module.exports = {
     },
   },
   rootDir: process.cwd(),
+  testEnvironment: 'node',
   testRegex: '/test/.+/.+js$',
 };
