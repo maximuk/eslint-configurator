@@ -28,7 +28,7 @@
     "eslint-plugin-import": "2.13.0",
     "eslint-plugin-jsx-a11y": "6.1.1",
     "eslint-plugin-react": "7.10.0",
-    "inquirer": "6.1.0",
+    "inquirer": "6.2.0",
     "temp-write": "3.4.0"
   },
   "devDependencies": {
