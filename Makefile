@@ -8,8 +8,6 @@ release:
 	npm install
 	npm run lint
 	npm test
-	git add package-lock.json
-	git commit --allow-empty -m "updated package-lock"
 	npm version $(VERSION)
 	npm publish
 	git push --no-verify --follow-tags
