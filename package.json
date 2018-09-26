@@ -35,7 +35,7 @@
     "babel-eslint": "9.0.0",
     "codecov": "3.1.0",
     "eslint-config-maximuk": "0.0.12",
-    "husky": "0.14.3",
+    "husky": "1.0.0",
     "jest": "23.5.0"
   }
 }
