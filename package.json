@@ -9,8 +9,12 @@
     "lint": "eslint bin lib test",
     "test": "jest -c ./test/jest.config.js",
     "test:watch": "jest -c ./test/jest.config.js --watch",
-    "codecov": "codecov",
-    "prepush": "npm run lint && npm test"
+    "codecov": "codecov"
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "npm run lint && npm test"
+    }
   },
   "repository": {
     "type": "git",
@@ -35,7 +39,7 @@
     "babel-eslint": "9.0.0",
     "codecov": "3.1.0",
     "eslint-config-maximuk": "0.0.12",
-    "husky": "1.0.0",
+    "husky": "1.1.0",
     "jest": "23.5.0"
   }
 }
