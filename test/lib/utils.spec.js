@@ -70,7 +70,6 @@ describe('./lib/utils.js', () => {
         JSON.stringify({
           ...mockConfig,
           extends: mockConfig.extends.map(file => path.resolve(file)),
-          parser: 'espree',
         }),
         `${BASE_CONFIG_NAME}.json`,
       ]);

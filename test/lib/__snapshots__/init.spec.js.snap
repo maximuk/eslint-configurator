@@ -41,17 +41,6 @@ Array [
       },
       Object {
         "choices": Array [
-          "espree",
-          "esprima",
-          "babel-eslint",
-        ],
-        "default": "babel-eslint",
-        "message": "Which parser are you going to use?",
-        "name": "parser",
-        "type": "list",
-      },
-      Object {
-        "choices": Array [
           "builtin",
           "browser",
           "node",
@@ -153,7 +142,6 @@ Array [
       "env": Object {
         "env": true,
       },
-      "parser": "parser",
       "parserOptions": Object {
         "ecmaFeatures": Object {
           "ecmaFeatures": true,
@@ -216,17 +204,6 @@ Array [
         "message": "Which additional language features you’d like to use?",
         "name": "ecmaFeatures",
         "type": "checkbox",
-      },
-      Object {
-        "choices": Array [
-          "espree",
-          "esprima",
-          "babel-eslint",
-        ],
-        "default": "babel-eslint",
-        "message": "Which parser are you going to use?",
-        "name": "parser",
-        "type": "list",
       },
       Object {
         "choices": Array [
@@ -301,7 +278,6 @@ Array [
       "env": Object {
         "env": true,
       },
-      "parser": "parser",
       "parserOptions": Object {
         "ecmaFeatures": Object {
           "ecmaFeatures": true,

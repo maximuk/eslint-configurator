@@ -1,2 +1,10 @@
-test
+.eslintrc
+.git
+.gitignore
+.travis.yml
 coverage
+Makefile
+node_modules
+package-lock.json
+README.md
+test
