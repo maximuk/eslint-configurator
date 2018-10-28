@@ -1,6 +1,6 @@
 {
   "name": "eslint-configurator",
-  "version": "0.1.10",
+  "version": "0.2.0",
   "description": "ESLint configurator",
   "bin": {
     "eslint-configurator": "./bin/index.js"
