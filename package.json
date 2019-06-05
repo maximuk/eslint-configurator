@@ -38,7 +38,7 @@
   "devDependencies": {
     "codecov": "3.5.0",
     "eslint-config-maximuk": "0.0.18",
-    "husky": "2.3.0",
+    "husky": "2.4.0",
     "jest": "24.7.1"
   }
 }
