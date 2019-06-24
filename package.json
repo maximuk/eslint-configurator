@@ -39,6 +39,6 @@
     "codecov": "3.5.0",
     "eslint-config-maximuk": "0.0.19",
     "husky": "2.5.0",
-    "jest": "24.7.1"
+    "jest": "24.8.0"
   }
 }
