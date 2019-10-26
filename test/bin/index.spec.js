@@ -61,7 +61,7 @@ describe('./bin/index.js', () => {
       'Unhandled Rejection at: Promise',
       promise,
       'reason:',
-      reason
+      reason,
     );
   });
 
