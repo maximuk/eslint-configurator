@@ -51,7 +51,7 @@ describe('./lib/config.js :: userConfig', () => {
     const self = { name: 'pluginUserConfigName' };
     const getter = Object.getOwnPropertyDescriptor(
       require('../../../lib/config.js').prototype,
-      'userConfig'
+      'userConfig',
     ).get;
 
     const result = getter.call(self);

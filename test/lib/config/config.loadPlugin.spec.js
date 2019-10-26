@@ -6,7 +6,7 @@ const mockLoadPluginResult = 'loadPluginResult';
 jest.mock(
   'eslint-plugin-pluginName',
   () => mockLoadPluginResult,
-  { virtual: true }
+  { virtual: true },
 );
 
 describe('./lib/config.js :: loadPlugin', () => {

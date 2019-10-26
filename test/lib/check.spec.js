@@ -70,7 +70,7 @@ describe('./lib/check.js', () => {
 
     expect(utils.createCLIEngine).toHaveBeenCalledTimes(2);
     expect(utils.createCLIEngine.mock.calls).toEqual(
-      usedPlugins.map(v => [v])
+      usedPlugins.map(v => [v]),
     );
 
     expect(process.exit).toHaveBeenCalledTimes(2);
@@ -105,7 +105,7 @@ describe('./lib/check.js', () => {
 
     expect(utils.createCLIEngine).toHaveBeenCalledTimes(2);
     expect(utils.createCLIEngine.mock.calls).toEqual(
-      usedPlugins.map(v => [v])
+      usedPlugins.map(v => [v]),
     );
 
     expect(process.exit).toHaveBeenCalledTimes(0);
