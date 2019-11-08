@@ -27,4 +27,13 @@ describe('./lib/config.js :: mapConfigs', () => {
       'prefix/config2',
     ]);
   });
+
+  it('should return empty object for plugin without configs', () => {
+    const self = { name: 'pluginName', prefix: 'prefix/' };
+    const plugin = {};
+
+    const result = Config.prototype.mapConfigs.call(self, plugin);
+
+    expect(Object.keys(result)).toEqual([]);
+  });
 });

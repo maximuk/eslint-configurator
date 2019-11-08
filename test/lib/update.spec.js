@@ -37,7 +37,7 @@ describe('./lib/update.js', () => {
   it('should update all configs and format files', () => {
     update();
 
-    expect(mockConfig.prototype.fakeConstructor).toHaveBeenCalledTimes(4);
+    expect(mockConfig.prototype.fakeConstructor).toHaveBeenCalledTimes(5);
     expect(mockConfig.prototype.fakeConstructor.mock.calls).toEqual([
       [BASE_CONFIG_NAME],
       ...PLUGINS_LIST.map(plugin => [plugin]),

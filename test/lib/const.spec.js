@@ -12,5 +12,7 @@ describe('./lib/const.js', () => {
       .toBe(`https://github.com/evcohen/eslint-plugin-jsx-a11y/blob/master/docs/rules/${ruleName}.md`);
     expect(PLUGINS_LINKS.react(ruleName))
       .toBe(`https://github.com/yannickcr/eslint-plugin-react/blob/HEAD/docs/rules/${ruleName}.md`);
+    expect(PLUGINS_LINKS['react-hooks']())
+      .toBe('https://reactjs.org/docs/hooks-rules.html#eslint-plugin');
   });
 });

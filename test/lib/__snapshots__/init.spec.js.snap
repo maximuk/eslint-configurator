@@ -82,6 +82,7 @@ Array [
           "import",
           "react",
           "jsx-a11y",
+          "react-hooks",
         ],
         "default": Array [],
         "message": "Which plugins are you going to use?",
@@ -132,6 +133,16 @@ Array [
         "name": "jsx-a11y",
         "type": "list",
       },
+      Object {
+        "choices": Array [
+          "No",
+          "react-hooks",
+        ],
+        "default": "No",
+        "message": "Do you want to use any react-hooks config?",
+        "name": "react-hooks",
+        "type": "list",
+      },
     ],
   ],
 ]
@@ -164,6 +175,10 @@ Array [
   ],
   Array [
     "jsx-a11y",
+    Object {},
+  ],
+  Array [
+    "react-hooks",
     Object {},
   ],
 ]
@@ -251,6 +266,7 @@ Array [
           "import",
           "react",
           "jsx-a11y",
+          "react-hooks",
         ],
         "default": Array [],
         "message": "Which plugins are you going to use?",
