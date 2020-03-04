@@ -33,7 +33,7 @@
     "eslint-plugin-jsx-a11y": "6.2.3",
     "eslint-plugin-react": "7.18.3",
     "eslint-plugin-react-hooks": "2.5.0",
-    "inquirer": "7.0.5",
+    "inquirer": "7.0.6",
     "temp-write": "4.0.0"
   },
   "devDependencies": {
